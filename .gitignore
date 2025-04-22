@@ -1,0 +1,33 @@
+# 🛡️ ARCHIVOS SENSIBLES
+.env
+*.env
+
+# 🧠 ENTORNO VIRTUAL (tu carpeta "env/")
+env/
+
+# ⚙️ CACHÉS DE PYTHON
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 🛠️ ARCHIVOS DE MIGRACIONES (opcionales si no quieres versionarlas al inicio)
+**/migrations/__pycache__/
+**/migrations/*.pyc
+# Puedes ignorar toda la carpeta si estás comenzando
+# api/migrations/
+
+# 🧪 ARCHIVOS TEMPORALES DE EDITORES
+.vscode/
+.idea/
+
+# 📂 ARCHIVOS DE SISTEMA
+.DS_Store
+Thumbs.db
+
+# 🧾 LOGS
+*.log
+
+# 🖼️ ARCHIVOS DE STATIC Y MEDIA (si generas en producción)
+staticfiles/
+media/
