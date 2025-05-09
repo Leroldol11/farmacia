@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', 
     'api.apps.ApiConfig',  # 'api',
+    'rest_framework_simplejwt',
     #'rest_framework.authtoken',
 
 ]
