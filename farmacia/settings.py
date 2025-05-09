@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework', 
     'api.apps.ApiConfig',  # 'api',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',  # para logout (blacklist)
     #'rest_framework.authtoken',
 
 ]
