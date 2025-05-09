@@ -2,6 +2,17 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
+class Usuario(AbstractUser):
+    ROLES = (
+        ('admin', 'Administrador'),
+        ('empleado', 'Empleado'),
+        ('cliente', 'Cliente'),
+    )
+    rol = models.CharField(max_length=50, choices=ROLES, default='cliente')
+
+    def __str__(self):
+        return self.username
+
 class CategoriaProducto(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField(blank=True)
@@ -9,19 +20,13 @@ class CategoriaProducto(models.Model):
     def __str__(self):
         return self.nombre
 
-class Usuario(AbstractUser):
-    rol = models.CharField(max_length=50, blank=True)
-
-    def __str__(self):
-        return self.username
-
 class Empleado(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     ci = models.CharField(max_length=20, unique=True)
     telefono = models.CharField(max_length=20)
     direccion = models.TextField()
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"

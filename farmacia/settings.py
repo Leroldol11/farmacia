@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', 
     'api.apps.ApiConfig',  # 'api',
-    'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',  # para logout (blacklist)
     #'rest_framework.authtoken',
+    'rest_framework_simplejwt.token_blacklist',
 
 ]
+AUTH_USER_MODEL = 'api.Usuario'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

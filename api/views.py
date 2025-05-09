@@ -1,10 +1,8 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
-
 from .models import (
     Usuario, Empleado, Proveedor, Cliente,
     CategoriaProducto, Producto, InventarioLote,
