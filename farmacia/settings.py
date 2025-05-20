@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', 
-    'api.apps.ApiConfig',  # 'api',
+    'api.apps.ApiConfig',
+    'accounts',  # 'api',
     #'rest_framework.authtoken',
     'rest_framework_simplejwt.token_blacklist',
 
